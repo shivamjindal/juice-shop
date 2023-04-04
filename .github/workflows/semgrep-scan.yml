@@ -25,7 +25,8 @@ jobs:
         with:
           node-version: 18
           cache: 'npm'
-      - run: npm install
+      - run: npm ci
+      - run: npm run build --if-present
       - run: semgrep ci
         env:
           # Connect to Semgrep Cloud Platform through your SEMGREP_APP_TOKEN.
